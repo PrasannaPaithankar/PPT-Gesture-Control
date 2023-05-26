@@ -19,7 +19,7 @@ class GUI:
         self.button.pack(pady=10)
 
         self.root.mainloop()
-   def Enter(self):
+    def Enter(self):
     '''
         This will store the text entered in the textbox of tkinter interface and close the interface when the enter button is pressed
     '''
