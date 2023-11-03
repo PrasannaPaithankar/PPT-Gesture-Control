@@ -26,7 +26,8 @@ class GUI(tk.Frame):
     def stream_window(self):
         # if url_inp is empty, use webcam
         if (self.url_inp.get() == ""):
-            cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+            cap = cv2.VideoCapture(0)
+            # cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
         # else use the stream from IP Webcam
         else:
             cap = cv2.VideoCapture("http://"+self.url_inp.get()+"/video")
@@ -74,7 +75,7 @@ class GUI(tk.Frame):
         return None
 
     def initialize(self):
-        cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+        cap = cv2.VideoCapture(0)
         frame = cv2.flip(cap.read()[1], 1)
         # self.handRecognizer.initialize(frame)
         self.poseRecognizer.initialize(frame)
